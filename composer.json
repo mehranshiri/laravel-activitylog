@@ -1,6 +1,6 @@
 {
-    "name": "spatie/laravel-activitylog",
-    "description": "A very simple activity logger to monitor the users of your website or application",
+    "name": "spatie/dealerset-activitylog",
+    "description": "A very simple activity logger to monitor the users of your website or application customized for Dealerset",
     "homepage": "https://github.com/spatie/activitylog",
     "keywords":
     [
@@ -8,7 +8,8 @@
         "log",
         "user",
         "activity",
-        "laravel"
+        "laravel",
+        "dealerset"
     ],
     "authors": [
         {
@@ -21,6 +22,12 @@
             "name": "Sebastian De Deyne",
             "email": "sebastian@spatie.be",
             "homepage": "https://spatie.be",
+            "role": "Developer"
+        },
+        {
+            "name": "Mehran Shiri",
+            "email": "admin@dealerset.com",
+            "homepage": "https://dealerset.com",
             "role": "Developer"
         }
     ],

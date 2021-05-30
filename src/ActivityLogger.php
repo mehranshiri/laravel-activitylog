@@ -8,6 +8,8 @@ use Spatie\Activitylog\Models\Activity;
 use Illuminate\Support\Traits\Macroable;
 use Illuminate\Contracts\Config\Repository;
 use Spatie\Activitylog\Exceptions\CouldNotLogActivity;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Dealer;
 
 class ActivityLogger
 {
@@ -173,6 +175,13 @@ class ActivityLogger
         $activity->description = $this->replacePlaceholders($description, $activity);
 
         $activity->log_name = $this->logName;
+
+        $user = Auth()::user();
+        $dealer = null;
+        if($user->user_type === 2) {
+            $dealer = Dealer::find($user->id);
+            $activity->dealer_group_id = $dealer->dealer_group_id;
+        }
 
         $activity->save();
 
